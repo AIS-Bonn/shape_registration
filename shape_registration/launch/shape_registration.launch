@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="shape_registration" type="shape_registration_node" name="shape_registration" output="screen">
+    </node>
+</launch>
+ 

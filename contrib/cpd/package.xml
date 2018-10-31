@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>cpd</name>
+  <version>0.0.0</version>
+  <description>The cpd package</description>
+  <maintainer email="rodriguez@ais.uni-bonn.de">Diego Rodriguez</maintainer>
+  <license>GPLv2</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>fgt</build_depend>
+</package>

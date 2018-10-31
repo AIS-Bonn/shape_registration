@@ -1,0 +1,12 @@
+<package format="2">
+  <name>fgt</name>
+  <version>1.0.0</version>
+  <description>Fast Gauss transforms</description>
+
+  <maintainer email="rodriguez@ais.uni-bonn.de">Diego Rodriguez</maintainer>
+
+  <license>LGPL</license>
+  <url type="website">https://github.com/gadomski/fgt#homebrew</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+</package>
