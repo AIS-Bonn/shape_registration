@@ -4,7 +4,7 @@ Code accompanying the ICRA paper: "Transferring Grasping Skills to Novel Instanc
 
 Project page: http://www.ais.uni-bonn.de/~rodriguez/#!/ShapeSpaceRegistration
 
-This project provides a tool for category-based, shape (latent) space, non-rigid registration.
+This repository provides a tool for category-based, shape (latent) space, non-rigid registration.
 - Starting with just a number of instances belonging to your category, this framework is able to
 deform a choosen canonical instance into novel observed category instances.
 - The inference can be performed from a single view of the object and thus is suitable for on-line applications.
@@ -45,7 +45,7 @@ $ sudo apt install ros-kinetic-pcl-ros libceres-dev libvtk6-dev libqwt-qt5-dev
 $ git clone https://github.com/AIS-Bonn/shape_registration.git
 ```
 
-2. Built it ! If you are using catkin tools: 
+2. Built it! If you are using catkin tools: 
 ```
 $ catkin build surface_registration
 ```
@@ -85,8 +85,8 @@ Initially only point clouds are supported but very soon (seriously) a version th
 Code has been tested under:
 - Ubuntu 16.04, ROS Kinetic
 
-## Stay tunned
+## Stay tuned
 Other works you might find interesting:
-- [Accumulating Grasping Skills](http://ais.uni-bonn.de/papers/RA-L_2018_Rodriguez.pdf).  [Project page](http://www.ais.uni-bonn.de/~rodriguez/#!/AccumulateGraspingKnowledge)
-- [Learning Grasping Synergies](http://www.ais.uni-bonn.de/~rodriguez/publications/humanoids_2018_learn_syn/humanoids_2018_Rodriguez.pdf).   [Project page](http://www.ais.uni-bonn.de/~rodriguez/#!/LearningSynergies)
-- [Dual-arm Manipulation](http://www.ais.uni-bonn.de/~rodriguez/publications/humanoids_2018_bimanual/humanoids_2018_Pavlichenko.pdf).          [Project page](http://www.ais.uni-bonn.de/~rodriguez/#!/BimanualManipulation)
+- Accumulating Grasping Skills.[[Paper](http://ais.uni-bonn.de/papers/RA-L_2018_Rodriguez.pdf)] [[Project page](http://www.ais.uni-bonn.de/~rodriguez/#!/AccumulateGraspingKnowledge)]
+- Learning Grasping Synergies.[[Paper](http://www.ais.uni-bonn.de/~rodriguez/publications/humanoids_2018_learn_syn/humanoids_2018_Rodriguez.pdf)] [ [Project page](http://www.ais.uni-bonn.de/~rodriguez/#!/LearningSynergies)]
+- Autonomous Dual-arm Manipulation[[Paper](http://www.ais.uni-bonn.de/~rodriguez/publications/humanoidsi_2018_bimanual/humanoids_2018_Pavlichenko.pdf)] [[Project page](http://www.ais.uni-bonn.de/~rodriguez/#!/BimanualManipulation)]

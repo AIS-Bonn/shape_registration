@@ -716,26 +716,14 @@ void ShapeGui::plotClicked(const QPointF & point)
 {
 	double latent1 = (double) point.x();
 	double latent2 = (double) point.y();
-
-	// Add a marker to the clicked point
-	QwtSymbol* sym = new QwtSymbol( QwtSymbol::Cross, QBrush(Qt::red), QPen(Qt::red, 3), QSize(8, 8) );
-	m_clicked->setSymbol( sym );
-
-	if (ui->latentBox1->value() == ui->latentBox2->value())
-	{
-		m_clicked->setValue(QPointF(latent1, 0));
-	}
-	else
-	{
-		m_clicked->setValue( point );
-	}
-
-	m_clicked->attach( ui->qwtPlot );
-	ui->qwtPlot->replot();
+	
+	m_shape_reg->setLatentVariable1 (ui->latentBox1->value());
+	m_shape_reg->setLatentVariable2 (ui->latentBox2->value());
 
 	m_shape_reg->setLatentValue1 (latent1);
 	m_shape_reg->setLatentValue2 (latent2);
 
+	updateLatentPlot();
 	m_shape_reg->visualizePCA();
 }
 
@@ -745,6 +733,7 @@ void ShapeGui::updateLatentPlot()
 	MatrixXd mat = m_shape_reg->pointsInLatentSpace();
 	std::vector<double> points(mat.data(), mat.data() + mat.rows() * mat.cols());
 
+	// Update the latent values of training samples according to the selected principal component
 	for (unsigned int i = 0; i < points.size(); i++)
 	{
 		m_latents.size();
@@ -766,6 +755,20 @@ void ShapeGui::updateLatentPlot()
 			i++;
 		}
 	}
+	
+	// Add a marker to the clicked point
+	QwtSymbol* sym = new QwtSymbol( QwtSymbol::Cross, QBrush(Qt::red), QPen(Qt::red, 3), QSize(8, 8) );
+	m_clicked->setSymbol( sym );
+	
+	if (ui->latentBox1->value() == ui->latentBox2->value())
+	{
+		m_clicked->setValue(QPointF(m_shape_reg->getLatentValue1(), 0));
+	}
+	else
+	{
+		m_clicked->setValue( QPointF(m_shape_reg->getLatentValue1(), m_shape_reg->getLatentValue2() ) );
+	}
+	m_clicked->attach( ui->qwtPlot );
 
 	ui->qwtPlot->replot();
 }

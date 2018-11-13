@@ -567,12 +567,12 @@ void ShapeRegistration::visualizePCA()
 
 		MatrixXd varChooser = MatrixXd::Zero(1, latent);
 		varChooser(0, m_latentVariable1) = m_latentVisualization1;
-		ROS_INFO_STREAM( "latent variable number " << m_latentVariable1 << " with value " <<  m_latentVisualization1 );
+		ROS_DEBUG_STREAM( "latent variable number " << m_latentVariable1 << " with value " <<  m_latentVisualization1 );
 
 		if (m_latentVariable1 != m_latentVariable2)
 		{
 			varChooser(0, m_latentVariable2) = m_latentVisualization2;
-			ROS_INFO_STREAM("latent variable number " << m_latentVariable2 << " with value " << m_latentVisualization2 );
+			ROS_DEBUG_STREAM("latent variable number " << m_latentVariable2 << " with value " << m_latentVisualization2 );
 		}
 
 		// Transform this vector into the observed space

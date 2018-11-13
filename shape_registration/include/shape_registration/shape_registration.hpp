@@ -138,10 +138,10 @@ public:
 	int getLatentVariable1 ()
 	{ return m_latentVariable1; };
 
-	void setLatentValue1 (int value)
+	void setLatentValue1 (double value)
 	{ m_latentVisualization1 = value; };
 
-	int getLatentValue1 ()
+	double getLatentValue1 ()
 	{ return m_latentVisualization1; };
 
 	void setLatentVariable2 (int value)
@@ -150,10 +150,10 @@ public:
 	int getLatentVariable2 ()
 	{ return m_latentVariable2; };
 
-	void setLatentValue2 (int value)
+	void setLatentValue2 (double value)
 	{ m_latentVisualization2 = value; };
 
-	int getLatentValue2 ()
+	double getLatentValue2 ()
 	{ return m_latentVisualization2; };
 
 	void trainingView(bool b)
