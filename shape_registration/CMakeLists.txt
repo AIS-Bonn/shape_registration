@@ -50,6 +50,7 @@ find_package(Ceres REQUIRED)
 
 #Set compiler settings
 set(CMAKE_CXX_FLAGS "-std=c++11 -Wall ${CMAKE_CXX_FLAGS}")
+set(CMAKE_BUILD_TYPE "Release")
 set(CMAKE_AUTORCC ON) # Resource files
     
        

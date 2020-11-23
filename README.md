@@ -1,4 +1,3 @@
-
 # Shape Registration  
 Code accompanying the ICRA paper: "Transferring Grasping Skills to Novel Instances by Latent Space Non-Rigid Registration" [ [Paper](http://ais.uni-bonn.de/papers/ICRA_2018_Rodriguez.pdf)]
 
@@ -28,30 +27,33 @@ year      = {2018}
 ```
 ## Dependencies
 - Eigen (http://www.eigen.tuxfamily.org/index.php?title=Main_Page)
-- ROS Kinetic (Indigo, Lunar and Melodic should also be OK)
-- PCL_ROS: `sudo apt install ros-kinetic-pcl-ros` (on Kinetic)
-- CERES (http://ceres-solver.org/) `sudo apt install libceres-dev` 
+- ROS Kinetic or Melodic 
+- PCL_ROS: `sudo apt install ros-<distro>-pcl-ros` (kinetic or melodic)
+- CERES (http://ceres-solver.org/) `sudo apt install libceres-dev`
 - VTK: `sudo apt install libvtk6-dev` (libvtk5-dev on Trusty)
 - Qwt: `sudo apt install libqwt-qt5-dev` (libqwt-dev on Trusty)
 
 ## Installation
-1. Install dependencies:
+1. Install dependencies (replace distro by kinetic or melodic):
 ```
-$ sudo apt install ros-kinetic-pcl-ros libceres-dev libvtk6-dev libqwt-qt5-dev
+$ sudo apt install ros-<distro>-pcl-ros libceres-dev libvtk6-dev libqwt-qt5-dev
 ```
 
-2. Clone this repository in your ROS workspace
+2. Clone this repository into your ROS workspace
 ```
 $ git clone https://github.com/AIS-Bonn/shape_registration.git
 ```
 
-2. Built it! If you are using catkin tools: 
+2. Built it! We recommend to use catkin tools (python-catkin-tools): 
 ```
-$ catkin build surface_registration
+$ catkin config --cmake-args -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="-Wall -std=c++11"
+$ catkin build shape_registration
 ```
 
 ## Usage
-Initially only point clouds are supported but very soon (seriously) a version that supports meshes will be released.
+You can play the video `shape_space_code_release.mp4` to get a brief overview of the capabilities of the software.
+
+General pipeline:
 
 1. Prapare the dataset of your category as Point Cloud Data (.pcd).
 
@@ -84,6 +86,7 @@ Initially only point clouds are supported but very soon (seriously) a version th
 ## Misc.
 Code has been tested under:
 - Ubuntu 16.04, ROS Kinetic
+- Ubuntu 18.04, ROS Melodic
 
 ## Stay tuned
 Other works you might find interesting:
