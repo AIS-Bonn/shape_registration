@@ -42,6 +42,9 @@ find_path(QWT_INCLUDE_DIR qwt.h HINTS /usr/include/qwt /usr/local/lib/qwt)
 find_package(VTK REQUIRED)
 include(${VTK_USE_FILE})
 
+# PCL
+find_package(PCL COMPONENTS common visualization REQUIRED)
+
 # Ceres
 find_package(Ceres REQUIRED)
 

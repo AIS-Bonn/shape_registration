@@ -7,5 +7,5 @@
   <license>GPLv2</license>
 
   <buildtool_depend>catkin</buildtool_depend>
-  <build_depend>fgt</build_depend>
+  <build_depend>fgt_ros</build_depend>
 </package>

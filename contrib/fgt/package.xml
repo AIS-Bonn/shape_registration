@@ -1,5 +1,5 @@
 <package format="2">
-  <name>fgt</name>
+  <name>fgt_ros</name>
   <version>1.0.0</version>
   <description>Fast Gauss transforms</description>
 

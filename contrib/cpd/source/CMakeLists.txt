@@ -26,11 +26,8 @@ endif()
 # Upstream
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 find_package(Eigen3 REQUIRED)
-find_package(Fgt QUIET)
-option(WITH_FGT "Build with fgt" ${Fgt_FOUND})
-if(WITH_FGT)
-    find_package(Fgt REQUIRED)
-endif()
+
+set(WITH_FGT ON)
 
 # Configuration
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
@@ -78,7 +75,7 @@ target_include_directories(Library-C++
     )
 target_compile_options(Library-C++ PUBLIC -std=c++11)
 if(WITH_FGT)
-    target_link_libraries(Library-C++ PUBLIC Fgt::Library-C++)
+    target_link_libraries(Library-C++ PUBLIC ${catkin_LIBRARIES} )
     target_compile_definitions(Library-C++ PUBLIC CPD_WITH_FGT)
 endif()
 

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(fgt)
+project(fgt_ros)
 
 find_package(catkin REQUIRED)
 file(MAKE_DIRECTORY ${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_INCLUDE_DESTINATION})
@@ -26,14 +26,5 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/source/CMake )
 
 find_package(Eigen3 REQUIRED)
 include_directories(${EIGEN3_INCLUDE_DIR})
-
-# Copy rbdl_config.h to devel prefix to comply with ROS standards
-add_custom_command(
-	OUTPUT "${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_INCLUDE_DESTINATION}/fgt_config.h"
-	DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/source/include/fgt/fgt_config.h"
-	COMMAND ${CMAKE_COMMAND} -E copy
-		"${CMAKE_CURRENT_BINARY_DIR}/source/include/fgt/fgt_config.h"
-		"${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_INCLUDE_DESTINATION}/fgt_config.h"
-)
 
 
